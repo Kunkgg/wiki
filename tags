@@ -1,0 +1,209 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/a3c87ab5/
+2019	Diary/index.md	/^## 2019$/;"	s
+Accessing host USB devices in guest	Linux/virtualbox.md	/^### Accessing host USB devices in guest$/;"	S
+Anki	Linux/Anki.md	/^# Anki$/;"	c
+Applications & tools	Linux/index.md	/^## Applications & tools$/;"	s
+Auto-indent	Linux/vim.md	/^### Auto-indent$/;"	S
+Basic Usage	Linux/ldd.md	/^## Basic Usage$/;"	s
+Basic Usages	Linux/vim.md	/^### Basic Usages$/;"	S
+Basic commands	Linux/index.md	/^## Basic commands$/;"	s
+Basic usage	Linux/systemctl.md	/^## Basic usage$/;"	s
+Basic usages	Linux/vim.md	/^### Basic usages$/;"	S
+Box visual mode	Linux/vim.md	/^## Box visual mode$/;"	s
+Buffer	Linux/vim.md	/^## Buffer$/;"	s
+By character range	Linux/cut.md	/^## By character range$/;"	s
+By delimiter and field number	Linux/cut.md	/^## By delimiter and field number$/;"	s
+C1 -- setuid, setgid and sticky bit	Linux/C1.md	/^# C1 -- setuid, setgid and sticky bit$/;"	c
+C3 -- Enviroment variables	Linux/C3.md	/^# C3 -- Enviroment variables$/;"	c
+C4 -- daemon	Linux/C4.md	/^# C4 -- daemon$/;"	c
+Change settings for specific screen	Linux/xrandr.md	/^### Change settings for specific screen$/;"	S
+Character classes	Linux/tr.md	/^## Character classes$/;"	s
+Check current output screens settings	Linux/xrandr.md	/^### Check current output screens settings$/;"	S
+Code	Code/index.md	/^# Code$/;"	c
+Commonly used variables	Linux/C3.md	/^## Commonly used variables$/;"	s
+Computer Problems	Linux/index.md	/^## Computer Problems$/;"	s
+Concept	Linux/vim.md	/^### Concept$/;"	S
+Concepts	Linux/index.md	/^## Concepts$/;"	s
+Config	Linux/ranger.md	/^## Config$/;"	s
+Core package	Linux/virtualbox.md	/^### Core package$/;"	S
+December	Diary/index.md	/^### December$/;"	S
+Descript:	Linux/P2.md	/^## Descript:$/;"	s
+Diary	Diary/index.md	/^# Diary$/;"	c
+Display specific option only	Linux/man.md	/^### Display specific option only$/;"	S
+Downloader	Linux/index.md	/^### Downloader$/;"	S
+Edit macro	Linux/vim.md	/^### Edit macro$/;"	S
+Error log:	Linux/P2.md	/^## Error log:$/;"	s
+Example	Linux/expand.md	/^## Example$/;"	s
+Example	Linux/sponge.md	/^## Example$/;"	s
+Examples	Linux/wget.md	/^### Examples$/;"	S
+Extension pack	Linux/virtualbox.md	/^### Extension pack$/;"	S
+F.Q.A	Linux/vim.md	/^## F.Q.A$/;"	s
+Features	Linux/ffmpeg.md	/^## Features$/;"	s
+Files	Linux/T6.md	/^## Files$/;"	s
+Filtering	Linux/ffmpeg.md	/^### Filtering$/;"	S
+Fold	Linux/vim.md	/^## Fold$/;"	s
+Fontconfig	Linux/T6.md	/^## Fontconfig$/;"	s
+Fullscreen mode shows blank screen with i3-wm or awesome-wm	Linux/virtualbox.md	/^### Fullscreen mode shows blank screen with i3-wm or awesome-wm$/;"	S
+GIMP	GIMP.md	/^# GIMP$/;"	c
+General settings	Linux/vim.md	/^### General settings$/;"	S
+General settings	Linux/virtualbox.md	/^## General settings$/;"	s
+General tasks	Linux/index.md	/^## General tasks$/;"	s
+General usage	Linux/paste.md	/^## General usage$/;"	s
+Generate a list of IP address	Linux/vim.md	/^### Generate a list of IP address$/;"	S
+Go through the change list	Linux/vim.md	/^### Go through the change list$/;"	S
+Goal	GIMP.md	/^## Goal$/;"	s
+Guest additions disc	Linux/virtualbox.md	/^### Guest additions disc$/;"	S
+How to setup anki-sync-server in local?	Linux/Anki.md	/^## How to setup anki-sync-server in local?$/;"	s
+Important Docs	Linux/index.md	/^## Important Docs$/;"	s
+Indent	Linux/vim.md	/^## Indent$/;"	s
+Indent for filetype	Linux/vim.md	/^### Indent for filetype$/;"	S
+Install	Linux/sponge.md	/^## Install$/;"	s
+Install	Linux/virtualbox.md	/^## Install$/;"	s
+Interest things	Linux/vim.md	/^## Interest things$/;"	s
+Invert selection (complement)	Linux/cut.md	/^## Invert selection (complement)$/;"	s
+Jumps	Linux/vim.md	/^### Jumps$/;"	S
+Learning English	English/index.md	/^# Learning English$/;"	c
+Less with search keyword	Linux/man.md	/^### Less with search keyword$/;"	S
+Lesson 1 Excuse me!	Gutenberg/NCE-1.md	/^# Lesson 1 Excuse me!$/;"	c
+Lesson 10 Look at...	Gutenberg/NCE-1.md	/^# Lesson 10 Look at...$/;"	c
+Lesson 12 Whose is this ...? This is my/your/his/her ...	Gutenberg/NCE-1.md	/^# Lesson 12 Whose is this ...? This is my\/your\/his\/her ...$/;"	c
+Lesson 13 A new dress	Gutenberg/NCE-1.md	/^# Lesson 13 A new dress$/;"	c
+Lesson 14 What colour's your ...?	Gutenberg/NCE-1.md	/^# Lesson 14 What colour's your ...?$/;"	c
+Lesson 15 Your passport, please.	Gutenberg/NCE-1.md	/^# Lesson 15 Your passport, please.$/;"	c
+Lesson 16 Are you ...?	Gutenberg/NCE-1.md	/^# Lesson 16 Are you ...?$/;"	c
+Lesson 17 How do you do?	Gutenberg/NCE-1.md	/^# Lesson 17 How do you do?$/;"	c
+Lesson 19 Tired and thirsty	Gutenberg/NCE-1.md	/^# Lesson 19 Tired and thirsty$/;"	c
+Lesson 2 Is this your ...?	Gutenberg/NCE-1.md	/^# Lesson 2 Is this your ...?$/;"	c
+Lesson 20 Which book?	Gutenberg/NCE-1.md	/^# Lesson 20 Which book?$/;"	c
+Lesson 22	Gutenberg/NCE-1.md	/^# Lesson 22$/;"	c
+Lesson 23	Gutenberg/NCE-1.md	/^# Lesson 23$/;"	c
+Lesson 24	Gutenberg/NCE-1.md	/^# Lesson 24$/;"	c
+Lesson 3 Sorry,sir.	Gutenberg/NCE-1.md	/^# Lesson 3 Sorry,sir.$/;"	c
+Lesson 4 Is this your ...?	Gutenberg/NCE-1.md	/^# Lesson 4 Is this your ...?$/;"	c
+Lesson 5 Nice to meet you.	Gutenberg/NCE-1.md	/^# Lesson 5 Nice to meet you.$/;"	c
+Lesson 6 What make is it? 它是什么牌子的？	Gutenberg/NCE-1.md	/^# Lesson 6 What make is it? 它是什么牌子的？$/;"	c
+Lesson 7 Are you a teacher?	Gutenberg/NCE-1.md	/^# Lesson 7 Are you a teacher?$/;"	c
+Lesson 8 What' your job?	Gutenberg/NCE-1.md	/^# Lesson 8 What' your job?$/;"	c
+Lesson 9 How are you today?	Gutenberg/NCE-1.md	/^# Lesson 9 How are you today?$/;"	c
+Lesson Is this your shirt?	Gutenberg/NCE-1.md	/^# Lesson Is this your shirt?$/;"	c
+Linux	Linux/index.md	/^# Linux$/;"	c
+Linux system	Linux/C3.md	/^### Linux system$/;"	S
+Listchars	Linux/vim.md	/^### Listchars$/;"	S
+Listen to the tape then answer the question. Is Chang-woo Chinese?	Gutenberg/NCE-1.md	/^## Listen to the tape then answer the question. Is Chang-woo Chinese?$/;"	s
+MAN	Linux/man.md	/^# MAN$/;"	c
+Man Pages	Linux/index.md	/^### Man Pages$/;"	S
+Marks	Linux/vim.md	/^### Marks$/;"	S
+My Knowledge Base	index.md	/^# My Knowledge Base$/;"	c
+Name array automatic	Linux/vim.md	/^### Name array automatic$/;"	S
+Navigation	Linux/vim.md	/^## Navigation$/;"	s
+New words and expressions	Gutenberg/NCE-1.md	/^## New words and expressions$/;"	s
+Note	Linux/ldd.md	/^## Note$/;"	s
+Numbers	Linux/vim.md	/^## Numbers$/;"	s
+Open files with VimDiff mode	Linux/vim.md	/^### Open files with VimDiff mode$/;"	S
+Options	Linux/grep.md	/^## Options$/;"	s
+Options	Linux/sponge.md	/^## Options$/;"	s
+Options	Linux/tee.md	/^## Options$/;"	s
+Options	Linux/tr.md	/^## Options$/;"	s
+Options	Linux/wget.md	/^### Options$/;"	S
+P1 - Xorg cleanup requires manual intervention	Linux/P1.md	/^# P1 - Xorg cleanup requires manual intervention$/;"	c
+P2 - Failed to startx, systemd-logind: failed to take device /dev/dri/card0	Linux/P2.md	/^# P2 - Failed to startx, systemd-logind: failed to take device \/dev\/dri\/card0$/;"	c
+Power management	Linux/systemctl.md	/^## Power management$/;"	s
+Print	Linux/C3.md	/^## Print$/;"	s
+Project Gutenberg	Gutenberg/index.md	/^# Project Gutenberg$/;"	c
+Put `range`	Linux/vim.md	/^### Put `range`$/;"	S
+Reference	Linux/C4.md	/^## Reference$/;"	s
+Reference	Linux/aria2.md	/^## Reference$/;"	s
+Reference	Linux/virtualbox.md	/^## Reference$/;"	s
+Reference	Linux/wget.md	/^## Reference$/;"	s
+Repeat inline search	Linux/vim.md	/^### Repeat inline search$/;"	S
+Scripts	Linux/index.md	/^## Scripts$/;"	s
+See also	Linux/T1.md	/^## See also$/;"	s
+Serial mode	Linux/paste.md	/^## Serial mode$/;"	s
+Setting save and load fold state	Linux/vim.md	/^### Setting save and load fold state$/;"	S
+Solution:	Linux/P2.md	/^## Solution:$/;"	s
+Specify output-delimiter	Linux/cut.md	/^## Specify output-delimiter$/;"	s
+Split window	Linux/vim.md	/^## Split window$/;"	s
+Status-Trying:	Linux/P2.md	/^## Status-Trying:$/;"	s
+Stream copy	Linux/ffmpeg.md	/^### Stream copy$/;"	S
+Synopsis	Linux/ffmpeg.md	/^## Synopsis$/;"	s
+T1 -- Find out which Process Listening on a particular port	Linux/T1.md	/^# T1 -- Find out which Process Listening on a particular port$/;"	c
+T2 -- Which video card driver are using?	Linux/T2.md	/^# T2 -- Which video card driver are using?$/;"	c
+T3 -- Reset lost root password	Linux/T3.md	/^# T3 -- Reset lost root password$/;"	c
+T4 -- Make USB flash installation media	Linux/T4.md	/^# T4 -- Make USB flash installation media$/;"	c
+T5 -- List all fonts file are used by urxvt	Linux/T5.md	/^# T5 -- List all fonts file are used by urxvt$/;"	c
+T6 -- Font config	Linux/T6.md	/^# T6 -- Font config$/;"	c
+TODO	Diary/2020-01-07.md	/^## TODO$/;"	s
+Tab	Linux/vim.md	/^## Tab$/;"	s
+Target	Linux/systemctl.md	/^## Target$/;"	s
+Task	Diary/2020-01-07.md	/^# Task$/;"	c
+Tools	Linux/T6.md	/^## Tools$/;"	s
+Two modules	Linux/T6.md	/^### Two modules$/;"	S
+Units	Linux/systemctl.md	/^## Units$/;"	s
+Usage	Linux/ffmpeg.md	/^## Usage$/;"	s
+Usage	Linux/ranger.md	/^## Usage$/;"	s
+Usage	Linux/wget.md	/^## Usage$/;"	s
+Usages	Linux/expand.md	/^## Usages$/;"	s
+Using GRUB to invoke bash	Linux/T3.md	/^## Using GRUB to invoke bash$/;"	s
+Using `fuser` command	Linux/T1.md	/^## Using `fuser` command$/;"	s
+Using `lsof` command	Linux/T1.md	/^## Using `lsof` command$/;"	s
+Using `netstat/ss` command	Linux/T1.md	/^## Using `netstat\/ss` command$/;"	s
+Using dd	Linux/T4.md	/^## Using dd$/;"	s
+Using input driver	Linux/T2.md	/^### Using input driver$/;"	S
+Using macro	Linux/vim.md	/^### Using macro$/;"	S
+Various motions	Linux/vim.md	/^### Various motions$/;"	S
+Video card driver	Linux/T2.md	/^### Video card driver$/;"	S
+Vim	Linux/vim.md	/^# Vim$/;"	c
+VimDiff	Linux/vim.md	/^## VimDiff$/;"	s
+VimGrep	Linux/vim.md	/^## VimGrep$/;"	s
+What is Robert's job?	Gutenberg/NCE-1.md	/^## What is Robert's job?$/;"	s
+What is the difference between	Linux/vim.md	/^### What is the difference between$/;"	S
+[NCE 1](NCE-1.md) -- [NCE-1.pdf](file:///home/gk07/Learn/NCE1.pdf)	Gutenberg/index.md	/^## [NCE 1](NCE-1.md) -- [NCE-1.pdf](file:\/\/\/home\/gk07\/Learn\/NCE1.pdf)$/;"	s
+aria2c	Linux/aria2.md	/^# aria2c$/;"	c
+bash	Linux/index.md	/^### bash$/;"	S
+case	Linux/case.md	/^# case$/;"	c
+color level	GIMP.md	/^### color level$/;"	S
+conceal	Linux/vim.md	/^## conceal$/;"	s
+cut	Linux/cut.md	/^# cut$/;"	c
+expand	Linux/expand.md	/^# expand$/;"	c
+fc-cache	Linux/T6.md	/^### fc-cache$/;"	S
+fc-cat	Linux/T6.md	/^### fc-cat$/;"	S
+fc-conflist	Linux/T6.md	/^### fc-conflist$/;"	S
+fc-list	Linux/T6.md	/^### fc-list$/;"	S
+fc-match	Linux/T6.md	/^### fc-match$/;"	S
+fc-pattern	Linux/T6.md	/^### fc-pattern$/;"	S
+fc-query	Linux/T6.md	/^### fc-query$/;"	S
+fc-scan	Linux/T6.md	/^### fc-scan$/;"	S
+fc-validate	Linux/T6.md	/^### fc-validate$/;"	S
+ffmpeg	Linux/ffmpeg.md	/^# ffmpeg$/;"	c
+fuser	Linux/fuser.md	/^# fuser$/;"	c
+grep	Linux/grep.md	/^# grep$/;"	c
+histogram	GIMP.md	/^### histogram$/;"	S
+journalctl -- Interface for log service	Linux/journalctl.md	/^# journalctl -- Interface for log service$/;"	c
+ldd -- print shared object dependencies	Linux/ldd.md	/^# ldd -- print shared object dependencies$/;"	c
+lsof	Linux/lsof.md	/^# lsof$/;"	c
+match string pattern	Linux/case.md	/^## match string pattern$/;"	s
+netstat and ss	Linux/netstat_and_ss.md	/^# netstat and ss$/;"	c
+output info	Linux/T2.md	/^### output info$/;"	S
+paste	Linux/paste.md	/^# paste$/;"	c
+print each line number at beginning by `Substitute` and `printf`	Linux/vim.md	/^### print each line number at beginning by `Substitute` and `printf`$/;"	S
+ranger	Linux/ranger.md	/^# ranger$/;"	c
+setgid	Linux/C1.md	/^## setgid$/;"	s
+setuid	Linux/C1.md	/^## setuid$/;"	s
+sponge	Linux/sponge.md	/^# sponge$/;"	c
+sticky	Linux/C1.md	/^## sticky$/;"	s
+systemctl -- Interface for systemd	Linux/systemctl.md	/^# systemctl -- Interface for systemd$/;"	c
+tee	Linux/tee.md	/^# tee$/;"	c
+terminfo	Linux/terminfo.md	/^# terminfo$/;"	c
+tr	Linux/tr.md	/^# tr$/;"	c
+vim-script	Linux/index.md	/^### vim-script$/;"	S
+virtualbox	Linux/virtualbox.md	/^# virtualbox$/;"	c
+wget	Linux/wget.md	/^# wget$/;"	c
+xrandr	Linux/xrandr.md	/^# xrandr$/;"	c
+zsh	Linux/C3.md	/^### zsh$/;"	S

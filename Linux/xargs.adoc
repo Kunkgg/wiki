@@ -1,0 +1,58 @@
+= xargs
+// Refs
+:handbook-xargs-ref: https://linuxhandbook.com/xargs-command/
+
+xargs - build and execute command lines from standard input
+
+The xargs command reads lines of text from the standard input or from the
+output of another command and turns them into commands and execute them.
+
+You’ll often `find` `xargs` command being used with the `find` command.
+The find command gives you a list of filenames and the xargs command lets you
+use those filenames, one by one,
+as if it was input to the other command.
+
+xargs command has the following syntax:
+
+[source]
+xargs [options] [command [initial-arguments]]
+
+=== Options
+
+-t, --verbose::
+    Print the command line on the standard error output before executing it.
+-p, --interactive::
+    Prompt whether run or not run each command line.
+-I replace-str::
+    Use replace-str. e.g. -I {}
+
+=== Examples
+
+.See what command is being executed
+[source]
+find . -type f -name "*.txt" | xargs -t touch
+
+.Force xargs to prompt for confirmation before running the command
+[source]
+find . -type f -name "*.txt" | xargs -p rm
+
+.Using placeholder with xargs to get more control over it
+[source]
+find . -type f -name "*.txt" | xargs -p -I {} mv {} new_dir
+
+.Running multiple commands with xargs
+[source]
+find . -type f -name "*.txt" | xargs -I {} sh -c 'ls -l {}; du -h {}'
+
+.Using xargs with docker
+[source]
+docker ps -q | xargs docker stop
+
+[TIP]
+Dealing with file names with spaces in `find` command result by `-print0`
+option, e.g. +
+`find . -type f -print0 -name "*.txt" | xargs -0 grep -l red`
+
+=== Refs
+
+{handbook-xargs-ref}[How to Use the Powerful Xargs Command in Linux]

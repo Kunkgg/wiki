@@ -1,0 +1,5 @@
+
+stream product company:
+facebook Puma
+baidu Dstream
+taobao 银河流数据处理平台

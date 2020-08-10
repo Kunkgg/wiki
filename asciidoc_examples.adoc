@@ -1,0 +1,230 @@
+= asciidoc examples
+:kroki-examples-url: https://kroki.io/examples.html
+:blockdiag-doc-url: http://blockdiag.com/en/index.html
+
+== diagram
+
+=== refs
+[[reference]]
+
+* {kroki-examples-url}[Kroki examples^]
+* {blockdiag-doc-url}[blockdiag doc^]
+
+=== examples
+["plantuml"]
+----
+skinparam monochrome true
+skinparam ranksep 20
+skinparam dpi 150
+skinparam arrowThickness 0.7
+skinparam packageTitleAlignment left
+skinparam usecaseBorderThickness 0.4
+skinparam defaultFontSize 12
+skinparam rectangleBorderThickness 1
+
+rectangle "Main" {
+  (main.view)
+  (singleton)
+}
+rectangle "Base" {
+  (base.component)
+  (component)
+  (model)
+}
+rectangle "<b>main.ts</b>" as main_ts
+
+(component) ..> (base.component)
+main_ts ==> (main.view)
+(main.view) --> (component)
+(main.view) ...> (singleton)
+(singleton) ---> (model)
+----
+
+["rackdiag"]
+----
+rackdiag {
+  rack {
+    16U;
+    description = "Rack 01";
+    1: UPS [2U];
+    3: DB Server;
+    4: Web Server;
+    5: Web Server;
+    6: Web Server;
+    7: Load Balancer;
+    8: L3 Switch;
+    9: N/A [2U]
+  }
+
+  rack {
+    16U;
+    description = "Rack 02";
+    1: UPS [2U];
+    3: DB Server;
+    4: Web Server;
+    5: Web Server;
+    6: Web Server;
+    7: Load Balancer;
+    8: L3 Switch;
+  }
+}
+----
+
+== scratchpad
+
+--
+. {blank}
++
+----
+print("one")
+----
+. {blank}
++
+----
+print("one")
+----
+--
+
+* grandparent list item
+** parent list item
++
+--
+*** child list item
+**** child list item
+--
+
++
+paragraph attached to grandparent list item <<gettysburg>>, <<img-sunset>>
+
+[#gettysburg]
+.Gettysburg Address
+[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth
+on this continent a new nation...
+
+Now we are engaged in a great civil war, testing whether
+that nation, or any nation so conceived and so dedicated,
+can long endure. ...
+____
+
+[NOTE]
+====
+This is an example of an admonition block.
+
+Unlike an admonition paragraph, it may contain any AsciiDoc content.
+The style can be any one of the admonition labels:
+
+* NOTE
+* TIP
+* WARNING
+* CAUTION
+* IMPORTANT
+====
+
+[source,ruby]
+----
+require 'asciidoctor'  # <1>
+
+Asciidoctor.convert_file 'mysample.adoc'  # <2>
+----
+<1> Imports the library
+<2> Reads, parses, and converts the file
+
+[sidebar]
+.Related information
+--
+This is aside text.
+
+It is used to present information related to the main content.
+--
+
+[#img-sunset]
+.A mountain sunset
+[link=https://www.flickr.com/photos/javh/5448336655]
+image::sunset.jpg[Sunset,300,200]
+
+[listing]
+sudo dnf install asciidoc
+
+[quote, goukun, in his famous book]
+Never do today what you can put off 'til tomorrow.
+
+[cols=2*]
+|===
+|Firefox
+|Web Browser
+
+|Ruby
+|Programming Language
+
+|TorqueBox
+|Application Server
+|===
+
+[cols=2*,options=header]
+|===
+|Name
+|Group
+
+|Firefox
+|Web Browser
+
+|Ruby
+|Programming Language
+
+...
+|===
+
+|===
+|Name |Group |Description
+
+|Firefox
+|Web Browser
+|Mozilla Firefox is an open-source web browser.
+It's designed for standards compliance,
+performance, portability.
+
+|Ruby
+|Programming Language
+|A programmer's best friend.
+
+...
+|===
+
+[cols="2,3,5"]
+|===
+|Name |Group |Description
+
+|Firefox
+|Web Browser
+|Mozilla Firefox is an open-source web browser.
+It's designed for standards compliance,
+performance and portability.
+
+|Ruby
+|Programming Language
+|A programmer's best friend.
+
+...
+|===
+
+[cols="2,3,5"]
+|===
+|Name |Group |Description
+
+|Firefox
+|Web Browser
+a|Mozilla Firefox is an open-source web browser.
+It's designed for:
+
+* standards compliance,
+* performance and
+* portability.
+
+|Ruby
+|Programming Language
+|A programmer's best friend.
+
+...
+|===

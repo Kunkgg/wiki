@@ -1,0 +1,363 @@
+= Hadoop 学习笔记
+:toc:
+:data-uri:
+:icon: font
+
+// refs
+:hadoop-wiki-ref: https://en.wikipedia.org/wiki/Apache_Hadoop
+:hadoop-history-img: hadoop_history.png
+:hadoop-structure-img: hadoop_structure.png
+:mapreduce-structure-img: mapreduce_structure.png
+:mapreduce-workflow-img: mapreduce_workflow.png
+:hdfs-structure-img: hdfs_structure.png
+:hadoop-spark-googletrends-img: hadoop_vs_spark_googletrends.png
+
+
+== 问题
+
+. 为什么需要 Hadoop? Hadoop 解决了什么问题?
+. Hadoop 是如何满足大数据时代的应用需求的?
+. Hadoop 是如何发展的?
+. Hadoop 从下到上是怎么实现的?
+. Hadoop 生态中常用的模块有哪些? 他们各自的应用场景是什么?
+
+== 大数据
+
+=== 大数据应用的三个特点
+
+* 全样而非抽样
+* 效率而非精度
+* 相关而非因果
+
+=== 大数据应用对计算机系统的新要求
+
+* 对海量数据的存储
+* 对海量数据的快速处理
+
+传统的计算机系统很难满足上述两点要求, 所以发展出了分布式架构.
+
+
+== Hadoop 简介
+
+Hadoop:: 是一组用于解决大数据计算问题的开源软件的集合,
+通过网络利用多台电脑组成集群解决大数据问题. +
+它提供一套软件框架, 用于分布式存储和并行处理大数据的编程模型. +
+最初设计为将集群部署在普通电脑硬件上. +
+其所有模块的设计都假设硬件发生故障是常态, 框架可以自动处理类似故障.
+
+Hadoop 的两大核心组件, HDFS 和 MapReduce 分别用于解决海量数据的存储和快速处理问题.
+
+.What is {hadoop-wiki-ref}[Hadoop,window="_blank"]?
+[quote,wikipedia]
+--
+Apache Hadoop ( /həˈduːp/) is a collection of open-source software utilities
+that facilitate using a network of many computers to solve problems involving
+massive amounts of data and computation.
+It provides a software framework for distributed storage and processing of big
+data using the MapReduce programming model.
+Originally designed for computer clusters built from commodity hardware—still
+the common use—it has also found use on clusters of higher-end hardware.
+All the modules in Hadoop are designed with a fundamental assumption that
+hardware failures are common occurrences and should be automatically handled
+by the framework.
+--
+
+=== 发展
+
+image:{hadoop-history-img}[]
+
+==== 起源
+
+2002:: Apache Nutch project, 由 Doug Cutting 和 Mike Cafarella 负责,
+目标是建立一个 web 搜索引擎.
+
+==== 名字由来
+
+2006:: Apache 社区认为 HDFS 和 MapReduce 可以用于完成其他任务, 就从 Nutch
+中独立了出来. Hadoop 是 Doug 孩子的黄象玩具的名字.
+
+==== 里程碑
+
+2003:: Google 发布了 Google distributed File System (GFS) 的研究论文,
+解决了海量数据存储的问题.
+
+2004:: 开源实现了 Nutch Distributed File System (NDFS). Google 发布了 MapReduce
+的研究论文. 解决了海量数据处理的问题. Nutch 同年开源实现了 MapReduce.
+
+2006:: 独立子项目 Hadoop, Nutch 集群的节点规模被限制在 20-40 个.
+
+2007:: Doug 在 Yahoo 用 Hadoop 组成了 1000 个节点的集群.
+
+2008:: Hadoop 击败了超级计算机. 11 月, Google 实现的 MapReduce 对 1TB
+数据排序耗时 68s. 09 年 4 月, YaHoo 的 Hadoop 团队实现的 MapReduce 对 1TB
+数据排序好事 62s.
+
+2011:: 第一个稳定版本 1.0 发布
+
+2012:: 包含 YARN 的 2.0 版本发布
+
+2017:: 3.0 版本发布
+
+==== 主要版本
+
+当前最新版本 `3.3.0`, 当前 Stable 版本 `3.2.1`
+
+* Hadoop 1 vs Hadoop 2 +
+增加 YARN (Yet Another Resource Negotiator) 进行资源调度和管理
+
+* Hadoop 2 vs Hadoop 3
+** 允许多 namenode, 解决单点故障问题
+** 减少了冗余存储对资源的消耗
+** 允许集群使用 GPU 硬件, 方便在集群上运行深度学习算法
+** 可使用 Docker 容器, 减少部署时间
+
+==== Hadoop 在 Google 的对应实现
+
+[cols=2*, options=header]
+|===
+|Google
+|Apache
+
+|GFS
+|HDFS
+
+|MapReduce
+|Hadoop MapReduce
+
+|Bigtable
+|Hbase
+|===
+
+=== 组成结构
+
+image:{hadoop-structure-img}[]
+
+Hadoop Common:: 提供其他模块需要的库和组件.
+
+HDFS:: 分布式文件系统, 将数据存储在多台普通设备上.
+
+YARN:: 调度和管理集群资源的管理平台.
+
+MapReduce:: 分布式并行编程模型.
+
+=== 编程语言
+
+Hadoop 框架本身是 Java 写的, 有少量的原生 C 代码和 Shell 脚本写的命令行工具.
+
+任何语言都可用来实现 MapReduce 的 map 和 reduce 函数.
+
+== Hadoop 两大核心
+
+=== HDFS
+
+image:{hdfs-structure-img}[]
+
+块:: 对海量文件进行分块, 存储到集群中的 dataNode. 分块大小默认 64MB.
+
+nameNode:: HDFS 中的 master 节点, 存储分布式存储的元数据.
+比如文件怎么分块, 各个块存储在哪些 dataNode
+
+dataNode:: HDFS 中的 slave 节点名, 实际存储数据的节点,
+文件最终存储在 dataNode Linux 系统的文件系统中.
+
+secondaryNameNode::
+. nameNode 的冗余备份
+. 参与 fsImage 和 editLog 的滚动更新
+
+=== MapReduce
+
+==== MapReduce 与传统并行编程框架的区别
+
+在 MapReduce 之前已经存在 OpenCL\CUDA\MPI 这些并行编程模型了,
+但是它们都存在一些问题, 不能很好的满足大数据处理, MapReduce 解决了这些问题.
+
+.传统并行编程存在的问题
+. 共享架构容易出现单点故障, 集群中设备耦合度高, 容错性低
+. 节点硬件要求服务器级别, 成本高
+. 封装层次不够高, 开发门槛高
+. 用于计算密集型应用
+
+==== MapReduce 高度抽象
+
+* map 函数
+* reduce 函数
+
+==== MapReduce 理念
+
+计算向数据靠拢
+
+==== MapReduce 体系结构
+
+image:{mapreduce-structure-img}[]
+
+Client:: 通过 Client 提交用户编写的应用程序到 JobTracker. 查看作业运行状态
+
+JobTracker:: master 节点, 负责整个作业的调度和处理以及失败和恢复
+
+TaskScheduler:: 可插拔模块, 负责具体的任务调度.
+
+TaskTracker:: slave 节点, 负责接收 JobTracker 的作业处理指令, 完成具体的任务处理
+
+==== MapReduce 工作流程
+
+image:{mapreduce-workflow-img}[]
+
+InputFormat:: 从文件系统读取数据, 并进行分片
+
+分片 split:: 逻辑层面上将文件进行分片, MapReduce 将以分片为单位对数据进行处理
+
+RR (RecordReader):: 读如数据, 将数据以键/值对的形式读入
+
+map 函数:: 用户编写的数据处理逻辑, 输入 k/v, 输出 k/v-list
+
+shuffle 洗牌:: 对 map 函数输出进行排序、分区、合并、并归等处理后,
+分发给对应的 reduce 函数
+
+reduce 函数:: 用户编写的数据处理逻辑, 输入 k/v-list,  输出 k/v
+
+OutputFormat:: 对输出进行检查, 将结果存储到文件系统.
+
+NOTE: 不同的 map 之间不通信, 不同的 reduce 不通信, 过程由系统自动处理.
+
+== Hadoop 生态
+
+=== Apache HBase
+
+HBase 是 Google BigTable 的开源实现.
+分布式 NoSQL 列族存储数据库, 运行在 HDFS 之上, 具有很强的水平扩展性.
+可以用在存储数十亿行和数百万列的大型数据表, 可实现对海量数据的快速随机访问.
+
+* Facebook 用 HBase 构建消息基础设施
+* Twitter 的用户搜索等功能都依赖 HBase
+
+=== Apache Pig
+
+Pig 与 Hive 相比是一款轻量级的大数据分析工具, 通过将与 SQL 语法相似的 Pig Latin
+转化为 MapReduce 任务实现对大数据的提取、转化、加载和分析.
+
+Yahoo 开源
+
+.Pig Latin 完成词频统计
+[source,piglatin]
+----
+input_lines = LOAD '/tmp/my-copy-of-all-pages-on-internet' AS (line:chararray);
+
+words = FOREACH input_lines GENERATE FLATTEN(TOKENIZE(line)) AS word; // <.>
+
+filtered_words = FILTER words BY word MATCHES '\\w+'; // <.>
+
+word_groups = GROUP filtered_words BY word; // <.>
+
+word_count = FOREACH word_groups GENERATE COUNT(filtered_words) AS count,
+group AS word; // <.>
+
+ordered_word_count = ORDER word_count BY count DESC; // <.>
+STORE ordered_word_count INTO '/tmp/number-of-words-on-internet';
+----
+<.> 加载文件并分词
+<.> 过滤空白格
+<.> 按单词分组
+<.> 对面每个分组分别计数
+<.> 按计数降序排序
+
+=== Apache Hive
+
+Hive 是 Hadoop 平台上的数据仓库软件,  可用于数据挖掘等工作.
+由于需要对大数据历史数据进行复杂分析和挖掘, Hive 作业的响应一般延迟比较高,
+一般在数十分钟到数小时不等.
+
+HiveQL 与 SQL 语法相似, 通过转化为 MapReduce 任务后执行.
+
+Facebook 开源.
+
+.HiveQL 完成词频统计
+[source,hiveql]
+----
+DROP TABLE IF EXISTS docs;
+CREATE TABLE docs (line STRING);
+LOAD DATA INPATH 'input_file' OVERWRITE INTO TABLE docs;
+CREATE TABLE word_counts AS
+SELECT word, count(1) AS count FROM
+ (SELECT explode(split(line, '\s')) AS word FROM docs) temp
+GROUP BY word
+ORDER BY word;
+----
+
+=== Cloudera Impala
+
+Impala 大大提高了使用类 SQL 请求操作 Hadoop 平台的性能.
+可以实现对存储在 HDFS 或 HBase 中的数据的实时 `SELECT`, `JOIN`, and `aggregate`.
+
+Impala 是 Google F1 的开源实现
+
+Impala 的运行需要以来 Hive 元数据.
+为了减少延迟,  与 Hive 和 Pig 不同, 它不将请求语句转化为 MapReduce.
+而是通过特定的分布式请求引擎直接访问分布式存储的文件.
+这与商用的并发 RDBMS 系统非常类似.
+
+=== Apache Drill
+
+实时交互式查询, 目标是可组建上万台服务器的集群, 实现对 PB
+和万亿行记录的秒级查询.
+
+对应 Google Dremel 系统的开源实现.
+
+=== Apache Sqoop
+
+Sqoop 是一个用于将 RDBMS 和 Hadoop 平台数据导入导出的 cli 应用
+
+=== Apache Flume
+
+Flume 是 Hadoop 平台上的分布式日志收集模块.
+
+=== Apache Ambari
+
+安装部署和监控管理工具, 提供 WebUI.
+Ambari 现在所支持的平台组件也越来越多，例如流行的 Spark，Storm 等计算框架，
+以及资源调度平台 YARN 等，我们都能轻松地通过 Ambari 来进行部署。
+
+=== Apache Oozie
+
+Hadoop 工作流调度管理.
+
+=== Apache ZooKeeper
+
+实现集群管理
+
+* 名称服务
+* 配置管理
+* 数据同步
+* 主节点选举
+* 消息队列
+* 通知系统
+
+=== Apache Tez
+
+生成 DAG, 优化 Hadoop MapReduce 执行过程.
+
+=== Apache Mahout
+
+机器学习和数据挖掘算法库.
+
+NOTE: Oozie, ZooKeeper and Kafka 的作用和区别还不是很清楚, 需要进一步了解.
+
+== Spark 生态
+
+2009 年加州伯克利 UCBerkeley 的 AMP 实验室开发, 基于内存计算的大数据并行框架.
+
+Spark 在 2014 年打破了 Hadoop 保持的基准排序纪录: +
+--
+* Spark 206 nodes, cost 23 mins, 100TB data
+* Hadoop 2000 nodes, cost 72 mins, 100TB data
+* Spark got 3 times speed by costing 0.1 resources
+--
+
+NOTE: 当前电商系统的推荐系统大多是利用 Spark Streaming 实现.
+
+.2010 - 2020 hadoop vs spark google trends
+image:{hadoop-spark-googletrends-img}[]
+
+=== Spark SQL
+=== Spark Streaming
+=== Spark MLlib
+=== Spark GraphX

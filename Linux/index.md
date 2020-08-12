@@ -112,6 +112,7 @@
 - [vim](vim.md)
 - [urxvt](urxvt.md)
 - sxhkd
+- [tmux](tmux.adoc)
 - i3
 - [dwm](dwm.md)
 - dmenu

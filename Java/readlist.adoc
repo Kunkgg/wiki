@@ -1,0 +1,14 @@
+= Java Read List
+:imagesdir: ./images
+:icons: font
+
+// refs
+:corejava-book-url: https://horstmann.com/corejava
+
+== Basic
+
+. Java 核心技术 卷1
+** {corejava-book-url}[Core Java - part 1 author site^]
+. Spring Boot 实战
+
+image::java-developer-roadmap.png[Java roadmap]

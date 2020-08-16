@@ -1,0 +1,19 @@
+= Type Casting
+:imagesdir: ./images
+:codedir: codes
+:icons: font
+
+// refs
+//:corejava-book-url: https://horstmann.com/corejava
+
+[source,java]
+----
+include::{codedir}/MyTypeCast/MyTypeCast.java[]
+----
+<.> Widening type casting, can use implicit form.
+<.> Narrowing type casting, must use explicit form. If use implicit casting,
+`error: incompatible types: possible lossy conversion from double to int` while
+compiling.
+<.> `String.vauleOf` method is used for convert int to string.
+<.> `Integer.parseInt` method is used for convert string to int. If string
+can't be converted to int, `java.lang.NumberFormatException`.

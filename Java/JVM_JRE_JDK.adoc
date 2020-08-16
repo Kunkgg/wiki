@@ -1,0 +1,18 @@
+= JVM, JRE and JDK
+:imagesdir: ./images
+:icons: font
+
+// refs
+//:corejava-book-url: https://horstmann.com/corejava
+
+.Java code execute
+image::code_execute.png[Java execute]
+
+JVM:: Java Virtual Machine
+
+JRE:: JVM + class libs
+
+JDK:: JRE + Java dev-tools(java, javac, javadoc, compilers, debugger and so on)
+
+.JVM, JRE and JDK
+image::JVM_JRE_JDK.png[JVM, JRE and JDK]

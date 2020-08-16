@@ -1,0 +1,47 @@
+= Data Types
+:imagesdir: ./images
+:icons: font
+
+// refs
+//:corejava-book-url: https://horstmann.com/corejava
+
+
+.Primitive data types
+[cols="2,5,3", options=header]
+|===
+|Type
+|Range
+|Default
+
+|boolean
+|`true` or `false`
+|`false`
+
+|byte
+|-128 ~ 127 (8-bit signed)
+|0
+
+|short
+|-32768 ~ 32767 (16-bit signed)
+|0
+
+|int
+|-2^31^ ~ 2^31^ - 1 (32-bit signed)
+|0
+
+|long
+|-2^63^ ~ 2^63^ - 1 (32-bit signed)
+|0
+
+|double
+|double-precision 64-bit floating-point
+|0.0 (0.0d)
+
+|float
+|single-precision 32-bit floating-point
+|0.0 (0.0f)
+
+|char
+|16-bit Unicode character `'\u0000'` ~ `'\uffff'`
+|`'\u0000'`
+|===

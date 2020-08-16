@@ -1,0 +1,26 @@
+= Python workflow
+
+[source, bash]
+----
+sudo pacman -S pyenv pipx
+yay -S pyenv-virtualenv \\ <.>
+
+pipx install --include-deps jupyter
+pipx inject jupyter notebook \\ <.>
+
+pyenv virtualenv [version] <virtualenv-name> \\ <.>
+pyenv virtualenvs
+
+pyenv activate <virtualenv-name> \\ <.>
+pip install ipykernel \\ <.>
+ipython kernel install --user --name=<virtualenv-name> \\ <.>
+
+jupyter notebook &
+----
+<.> Install `pyenv`, `pyenv-virtualenv` and `pipx` by Arch Linux package
+manager.
+<.> Install jupyter notebook by `pipx`.
+<.> Create a new virtualenv.
+<.> Activate the virtualenv.
+<.> Install `ipykernel` and other des packages in virtualenv.
+<.> Install kernel in virtualenv for selecting kernel in jupyter notebook.

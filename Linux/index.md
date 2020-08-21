@@ -96,6 +96,8 @@
 - command
 - stest
 
+- iperf
+
 ## General tasks
 
 - [T1](T1.md) -- Find out which Process Listening on a particular port

@@ -75,3 +75,10 @@ systemd units
 /home/gk07/.local/bin/DevicesManager/myDisks
 /home/gk07/.local/bin/DevicesManager/myAndroid
 /home/gk07/.script/utils.sh
+
+- [ ] read Programiz Java OOP parts
+- [ ] start the project manager software dev
+    - [ ] find a JS lib for dealing with excal
+    - [ ] find a gante chart js template
+    - [ ] learn the different bewteen nw.js with electron. which can generate
+        binary executable, which is the lighter?

@@ -1,14 +1,32 @@
 = Type Casting
-:imagesdir: ./images
-:codedir: codes
-:icons: font
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-08-24
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
 
 // refs
-//:corejava-book-url: https://horstmann.com/corejava
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+
 
 [source,java]
 ----
-include::{codedir}/MyTypeCast/MyTypeCast.java[]
+include::includes/MyTypeCast/MyTypeCast.java[]
 ----
 <.> Widening type casting, can use implicit form.
 <.> Narrowing type casting, must use explicit form. If use implicit casting,

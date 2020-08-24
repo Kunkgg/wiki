@@ -1,26 +1,74 @@
 = OOP
-:imagesdir: ./images
-:codedir: codes
-:icons: font
-:TOC:
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-08-24
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
 
 // refs
-//:corejava-book-url: https://horstmann.com/corejava
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
 
-// [source,java]
-// ----
-// include::{codedir}/MyTypeCast/MyTypeCast.java[]
-// ----
-// <.> Widening type casting, can use implicit form.
-// <.> Narrowing type casting, must use explicit form. If use implicit casting,
-// `error: incompatible types: possible lossy conversion from double to int` while
-// compiling.
-// <.> `String.vauleOf` method is used for convert int to string.
-// <.> `Integer.parseInt` method is used for convert string to int. If string
-// can't be converted to int, `java.lang.NumberFormatException`.
 
-== Basic
+[plantuml]
+----
+@startmindmap
+skinparam monochrome true
++ OOP
+++ class and object
+++ methods
+++ constructor
+++ access modifier
++++ default
++++ private
++++ protected
++++ public
+++ static
++++ variable
++++ method
+++ inheritance
+++ method overriding
++++ class
++++ method
+++ interface
+++ abstract
+++ polimorphism
+++ reflection
+-- this keyword
+-- final
+--- variable
+--- method
+--- class
+-- instanceof
+-- super
+-- nested class
+-- static class
+-- anonymous class
+-- enum
+--- enum class
+--- enum constructor
+--- enum String
+@endmindmap
+----
 
+[glossary]
+== Java OOP Glossary
+
+[glossary]
 class::
 现实中一类事物的抽象。
 
@@ -41,5 +89,7 @@ access modifier::
 . private: 仅同一 class 内可见
 . protected: subclass 和同一 package
 . public
+
+== Basic
 
 == Advance

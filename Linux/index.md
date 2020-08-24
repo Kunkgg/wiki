@@ -124,7 +124,7 @@
 - sxiv
 - neomutt
 - newsboat
-- [git](git.md)
+- [git](git.adoc)
 - docker
 - maim
 - [ffmpeg](ffmpeg.md)

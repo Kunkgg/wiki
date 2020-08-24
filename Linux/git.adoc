@@ -1,21 +1,38 @@
+= git
+// refs
 
-# git
 
-## How to Write a Git Commit Message
+== How to set socks proxy for ssh git
+
+install `openbsd-netcat`
+
+.$HOME/.ssh/config
+[source]
+----
+Host *
+    ServerAliveInterval 300
+    ServerAliveCountMax 2
+
+Host github.com
+    User git
+    ProxyCommand nc -X 5 -x 127.0.0.1:1080 %h %p
+----
+
+== How to Write a Git Commit Message
 
 The seven rules of a great Git commit message:
 
-1.  Separate subject from body with a blank line
-1.  Limit the subject line to 50 characters
-1.  Capitalize the subject line
-1.  Do not end the subject line with a period
-1.  Use the imperative mood in the subject line
-1.  Wrap the body at 72 characters
-1.  Use the body to explain what and why vs. how
+. Separate subject from body with a blank line
+. Limit the subject line to 50 characters
+. Capitalize the subject line
+. Do not end the subject line with a period
+. Use the imperative mood in the subject line
+. Wrap the body at 72 characters
+. Use the body to explain what and why vs. how
 
 For example:
 
-```sh
+====
 Summarize changes in around 50 characters or less
 
 More detailed explanatory text, if necessary. Wrap it to about 72
@@ -43,58 +60,68 @@ like this:
 
 Resolves: #123
 See also: #456, #789
-```
-## Common Tasks
+====
 
-### Clear History
+== Common Tasks
 
-1.  Use rebase merging
+=== Clear History
 
-2.  Set merge button allow rebase merging
+. Use rebase merging
+. Set merge button allow rebase merging
 
-### Delete branch
+=== Delete branch
 
-1.  Delete local branch
-
+. Delete local branch
+[source]
+----
     git branch -d <branchname>
     git branch -D <branchname>
+----
 
-2.  Delete remote branch
-
+. Delete remote branch
+[source]
+----
     git branch -a
     git push origin --delete <branchname>
+----
 
-## Tips
+== Tips
 
-### specify a particular version of the file:
+=== specify a particular version of the file:
 
+[source]
+----
     $ git diff v2.5:Makefile HEAD:Makefile.in
+----
 
-### How to complete a git clone for a big project on an unstable connection?
+=== How to complete a git clone for a big project on an unstable connection?
 
 Use shallow clone
 
+[source]
+----
     git clone --depth=1
     git fetch --depth=N or git fetch --unshallow
     git pull --all
+----
 
 [stackoverflow](https://stackoverflow.com/questions/3954852/how-to-complete-a-git-clone-for-a-big-project-on-an-unstable-connection)
 
-## Reference
+== Reference
 
-### man pages
+=== man pages
 
-*   gitglossary
-*   giteveryday
-*   gitworkflows
-*   gittutorial[-2]
-*   git-format-patch
-*   git-am
-*   git-bisect
-*   git-config
+* gitglossary
+* giteveryday
+* gitworkflows
+* gittutorial[-2]
+* git-format-patch
+* git-am
+* git-bisect
+* git-config
 
-### Guidelines
+=== Guidelines
 
--   [Pro Git](https://git-scm.com/book/en/v2)
--   [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
--   [gitlab Merge requests workflow](https://docs.gitlab.com/ee/development/contributing/merge_request_workflow.html)
+* [Pro Git](https://git-scm.com/book/en/v2)
+* [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+* [gitlab Merge requests workflow](https://docs.gitlab.com/ee/development/contributing/merge_request_workflow.html)

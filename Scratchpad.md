@@ -69,3 +69,6 @@ sheetAPI:
 - [x] 向单个范围写入数据
 - [x] 读取多个范围
 - [x] 向多个范围写入数据
+
+"snippets.snipmate.enabled": true,
+"snippets.ultisnips.pytthonVersion": 3

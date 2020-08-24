@@ -1,11 +1,10 @@
 [Get Back To Index](index)
 
-
 Note taking:
 
 - [ ] write in vim
-    - [ ] color scheme
-    - [ ] snippnets
+  - [ ] color scheme
+  - [ ] snippnets
 - [ ] pandoc markdown style guide
 - [ ] fuzzy find quik start
 - [ ] jump each other in markdown with gf
@@ -20,19 +19,19 @@ Note taking:
 - [ ] view on mobile
 - [ ] convert script
 
-
 systemd units
 
 - [ ] ibus -- ibus is not controled by systemd
 - [ ] urxvtd -- failed
 - [ ] sxhkd -- failed
-- [X] aria2
+- [x] aria2
 - [ ] transmission -- never try, aria2 seems like can do more.
 
-- [X] Bookmarks for localhost web service
-    *   syncthing
-    *   yaaw
-    *   nginx index
+- [x] Bookmarks for localhost web service
+
+  - syncthing
+  - yaaw
+  - nginx index
 
 - [ ] dmenu pass
 - [ ] vim pandoc
@@ -44,30 +43,29 @@ systemd units
 - [ ] live preview
 - [ ] git
 - [ ] read manpages
-    - [ ] ascii(7)
-    - [ ] boot(7)
-    - [ ] charsets(7)
-    - [ ] chmod(1)
-    - [ ] credentials(7)
-    - [ ] fstab(5)
-    - [ ] hier(7)
-    - [ ] systemd(1)
-    - [ ] locale(1p), locale(5), locale(7)
-    - [ ] printf(3)
-    - [ ] proc(5)
-    - [ ] regex(7)
-    - [ ] signal(7)
-    - [ ] term(5), term(7)
-    - [ ] termcap(5)
-    - [ ] terminfo(5)
-    - [ ] utf-8(7)
+  - [ ] ascii(7)
+  - [ ] boot(7)
+  - [ ] charsets(7)
+  - [ ] chmod(1)
+  - [ ] credentials(7)
+  - [ ] fstab(5)
+  - [ ] hier(7)
+  - [ ] systemd(1)
+  - [ ] locale(1p), locale(5), locale(7)
+  - [ ] printf(3)
+  - [ ] proc(5)
+  - [ ] regex(7)
+  - [ ] signal(7)
+  - [ ] term(5), term(7)
+  - [ ] termcap(5)
+  - [ ] terminfo(5)
+  - [ ] utf-8(7)
 - [ ] Arch Linux specific pages
-    - [ ] archlinux(7)
-    - [ ] mkinitcpio(8)
-    - [ ] pacman(8)
-    - [ ] pacman-key(8)
-    - [ ] pacman.conf(5)
-
+  - [ ] archlinux(7)
+  - [ ] mkinitcpio(8)
+  - [ ] pacman(8)
+  - [ ] pacman-key(8)
+  - [ ] pacman.conf(5)
 
 /home/gk07/.local/bin/DevicesManager/myPower
 /home/gk07/.local/bin/DevicesManager/myBluet
@@ -78,7 +76,7 @@ systemd units
 
 - [ ] read Programiz Java OOP parts
 - [ ] start the project manager software dev
-    - [ ] find a JS lib for dealing with excal
-    - [ ] find a gante chart js template
-    - [ ] learn the different bewteen nw.js with electron. which can generate
+  - [ ] find a JS lib for dealing with excal
+  - [ ] find a gante chart js template
+  - [ ] learn the different bewteen nw.js with electron. which can generate
         binary executable, which is the lighter?

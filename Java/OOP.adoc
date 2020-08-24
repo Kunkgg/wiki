@@ -1,0 +1,45 @@
+= OOP
+:imagesdir: ./images
+:codedir: codes
+:icons: font
+:TOC:
+
+// refs
+//:corejava-book-url: https://horstmann.com/corejava
+
+// [source,java]
+// ----
+// include::{codedir}/MyTypeCast/MyTypeCast.java[]
+// ----
+// <.> Widening type casting, can use implicit form.
+// <.> Narrowing type casting, must use explicit form. If use implicit casting,
+// `error: incompatible types: possible lossy conversion from double to int` while
+// compiling.
+// <.> `String.vauleOf` method is used for convert int to string.
+// <.> `Integer.parseInt` method is used for convert string to int. If string
+// can't be converted to int, `java.lang.NumberFormatException`.
+
+== Basic
+
+class::
+现实中一类事物的抽象。
+
+object::
+现实中一类中某个具体实例的抽象, 根据类创建。
+
+method::
+类中定义的可以完成某些工作的函数。
+
+constructor::
+构造器，当使用 `new` 创建 object 时自动执行， 两个限制条件： +
+. constructor 与 class 名称需要保持一致
+. constructor 没有返回值
+
+access modifier::
+访问限定符， 设置对类、属性或方法的可见性， 实现权限控制。 4 种： +
+. default
+. private: 仅同一 class 内可见
+. protected: subclass 和同一 package
+. public
+
+== Advance

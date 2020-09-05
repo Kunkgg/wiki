@@ -1,0 +1,69 @@
+= Coc-snippets
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-08-24
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+:url-coc-snippets-issue-126: https://github.com/neoclide/coc-snippets/issues/126
+:url-vim-sinppets: https://github.com/honza/vim-snippets
+
+== {url-coc-snippets-issue-126}[issue #126]
+
+."No `vimsnipets` module" error in installation #126
+....
+[coc.nvim] Error on execute python script: request error nvim_comma
+nd - Vim(return):Error invoking 'python_execute_file' on channel 4
+(python3-script-host):
+Traceback (most recent call last):
+  File "/tmp/coc.nvim-8249/coc-ultisnips-OH7MTlCpbm.py", line 514,
+in <module>
+    from vimsnippets import complete
+ModuleNotFoundError: No module named 'vimsnippets'
+....
+
+=== Reason
+
+Quote a snippets include the `vimsnippets` python module.
+It may come from {url-vimsnippets}[honza/vim-snippets].
+
+.vim-snippets/UltiSnips/all.snippets
+[source, snippets]
+----
+##############
+# NICE BOXES #
+##############
+global !p
+from vimsnippets import foldmarker, make_box, get_comment_format // <.>
+LOREM = """
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod \
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At \
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, \
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+"""
+endglobal
+----
+<.> This line cause the error.
+
+=== Solution
+
+. Install the files in `honza/vim-snippets/pythonx`(`javascript_snippets.py`
+and `vimsnippets.py`) in your neovim python3 provider environment.
+. Or don't use the any snippets which include `vimsnippets.py`

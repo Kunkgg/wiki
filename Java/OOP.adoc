@@ -44,9 +44,10 @@ skinparam monochrome true
 ++ method overriding
 +++ class
 +++ method
-++ interface
 ++ abstract
+++ interface
 ++ polimorphism
+++ encapsulation
 ++ reflection
 -- this keyword
 -- final
@@ -88,7 +89,101 @@ access modifier::
 . default
 . private: 仅同一 class 内可见
 . protected: subclass 和同一 package
-. public
+. public: 总是可见
+
+static::
+. static variable: 表示该属性不与实力绑定，可直接通过类调用。
+. static method: 表示该方法不与实力绑定，可直接通过类调用。
+. static class: 静态类，只能用于嵌套在内层的类定义， 不能用于顶层 top-level 类。
+
+inheritance::
+继承是实现代码重用的一种方式。子类可以继承父类中定义的属性和方法。
+Java 中多继承，即一个子类同时继承多个不同父类。需要通过 interface 实现。
+
+method overriding::
+子类可以定义新的方法覆盖父类中对应的方法。条件： +
+. 子类和父类中有相同方法名、返回值类型和参数列表的方法
+. 不能 override `final` 和 `static` 类
+
+this keyword::
+代表当前对象。
+
+super keyword::
+. 调用父类中已经在子类中被 override 的方法
+. 访问父类中与子类中同名的属性
+. 显示调用父类构造器
+
+abstract::
+. 抽象类不能被实例化
+. 抽象方法， 指没有实现的方法。
+. 包含抽象方法的类应该声明为抽象类。
+. 为了实现抽象类的功能，需要用他的子类创建对象。
+. 抽象类的子类必须实现抽象类中所有的抽象方法。
+. 可以直接访问抽象类中的静态属性和方法。
+
+interface::
+. interface 定义一个必须由其他类实现的方法的集合。
+. 所有在 inteface 中定义的方法隐式使用 `public`
+. 所有在 inteface 中定义的属性隐式使用 `public static final`
+. 使用 `implements` 关键字实现在其他类中实现 interface
+. interface 可以在 Java 中实现多继承
+. interface 中可以定义 default 方法
+. interface 之间可以 `extend`
+
+polymorphism::
+多态可以保护代码的一致性，相同的属性或方法在不同的对象中有不同的实现。
+例如，用 `+` 操作 int 类对象，结果是两个数的和。 而如果用 `+` 操作 string
+对象，结果这是两个字符串的拼接。
+再例如，有一个用于图形操作的类 Polygon, 它有多个像 Circle, Square 的子类。
+每个子类都有各自的 getArea 方法实现。
+
+encapsulation::
+. 把有关联的属性和方法进行封装，可以使代码的结构整洁，增强可读性
+. 封装配合访问限定符可以实现数据的隐藏
+
+nested(inner)-class::
+. Java 将 inner class 当作一个普通类成员对待， 像方法和属性一样。
+. inner class 可以使用 `private` 和 `protected` 访问限定符。
+. 可以使用 `dot(.)` 访问 inner class 和它的成员。
+. 在非静态 inner class 中可以访问 outer class 的成员， 即使 `private`
+也可以。`OuterClassName.this.member`
+
+anonymous-class::
+. 没有名称的 inner-class
+
+singleton::
+. 单例是一种设计模式， 它确保某个类只有一个实例被创建。
+.在 Java 中实现单例的方法
+[source, java]
+----
+class SingletonExample {
+
+// private field that refers to the object
+   private static SingletonExample singleObject; // <.>
+
+   private SingletonExample() {
+      // constructor of the SingletonExample class // <.>
+   }
+
+   public static SingletonExample getInstance() {
+      // write code that allows us to create only one object
+      // access the object as per our need // <.>
+   }
+}
+----
+<.> `private` 属性，指向单例对象
+<.> `private` 构造器，只有从类内部才能创建对象
+<.> `public static` 方法， 允许创建和访问我们创建的对象。
+在方法内设置限制只能创建一个对象。
+
+--
+reflection::
+. 在 Java 中 reflection 可以让我们在程序运行过程中对 class, interface,
+constructor, method and field 进行检查和操作。
+. `Class` 类保存运行中所有对象和类的信息
+. `Class` 的对象描述特定类的信息。 利用这些对象进行 reflection
+--
+
 
 == Basic
 

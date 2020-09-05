@@ -1,0 +1,27 @@
+= Exception
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-08-24
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+
+.Java Exception hierarchy
+image:java_exception.png[Java Exception hierarchy]

@@ -1,0 +1,122 @@
+= Platform Environment
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-09-02
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+
+Java 平台环境可以通过命令行参数、配置文件、系统配置、环境变量、 `PATH` 和 `CLASSPATH`
+几个方面去控制。
+
+== 命令行参数
+
+.使用命令行参数
+[source, java]
+----
+public class Echo {
+    public static void main (String[] args) {
+        for (String s: args) {
+            System.out.println(s);
+        }
+    }
+}
+/*
+ * 运行结果
+   java Echo Drink Hot Java
+   Drink
+   Hot
+   Java
+*/
+
+----
+
+
+== 配置文件工具 API
+
+`java.util.Properties` 类代表属性的集合，用来处理持久化配置文件。
+
+Implemented Interfaces: +
+`Serializable`, `Cloneable`, `Map<Object, Object>`
+
+.使用 `Properties` 对象
+[source, java]
+----
+Properties defaultProps = new Properties();
+FileInputStream in = new FileInputStream("defaultProperties");
+defaultProps.load(in); // <.>
+in.close();
+
+Properties applicationProps = new Properties(defaultProps);  // <.>
+
+in = new FileInputStream("appProperties");
+applicationProps.load(in);  // <.>
+in.close();
+----
+<.> 加载默认配置
+<.> 创建一个包含默认配置的 `Properties` 对象
+<.> 加载最新配置
+
+.保存配置
+[source, java]
+----
+FileOutputStream out = new FileOutputStream("appProperties");
+applicationProps.store(out, "---No Comment---");
+out.close();
+----
+
+提取和修改配置的方法：
+* 提取
+** `getProperty(String key)`
+** `getProperty(String key, String default)`
+** `stringPropertyNames()`
+** `size()`
+* 修改
+** `setProperty(String key, String value)`
+** `remove(String key)`
+
+==  系统配置 API
+
+这里的系统之的是计算机操作系统
+
+* `System.getProperty(String propertyName)`
+* `System.getProperty(String propertyName, String defualt)`
+* `System.getProperties(Properties props)`
+* `System.getProperty(String key, String value)`
+
+== 环境变量
+
+* `System.getenv()`
+* `System.getenv(String envName)`
+
+== `PATH` 和 `CLASSPATH`
+
+`PATH`:: 系统查找可执行文件的路径列表, 可以指定 `java`, `javac` 等 JDK
+工具的执行。
+
+`CLASSPATH`:: `java` 查找类的路径列表。推荐使用 `java -cp`
+
+== 举例
+
+.PersistentEcho
+[source, java]
+----
+include::includes/PersistentEcho/PersistentEcho.java[]
+----

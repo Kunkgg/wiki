@@ -1,0 +1,50 @@
+= SSH
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-09-08
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+:stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+
+== Issues
+
+.No matching key exchange method found by OpenSSH 7.0
+OpenSSH 7.0 deprecated the diffie-hellman-group1-sha1 key algorithm because it
+is weak and within theoretical range of the so-called Logjam attack
+(see http://www.openssh.com/legacy.html).
+If the key algorithm is needed for a particular host,
+ssh will produce an error message like this:
+
+[source]
+----
+Unable to negotiate with 127.0.0.1: no matching key exchange method found.
+Their offer: diffie-hellman-group1-sha1
+----
+
+The best resolution for these failures is to upgrade/configure the server to
+not use deprecated algorithms. If that is not possible,
+you can force the client to reenable the algorithm with the client option:
+
+.client side `~/.ssh/config`
+[source]
+----
+Host 192.168.0.134
+    KexAlgorithms +diffie-hellman-group1-sha1
+----

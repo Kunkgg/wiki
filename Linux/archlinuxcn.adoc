@@ -1,0 +1,49 @@
+= archlinuxcn reposity
+:toc:
+:icon: font
+gk07 <gk_520@hotmail.com>
+v1.0, 2020-09-09
+// v{revnumber}, {docdate}
+:library: Asciidoctor
+ifdef::asciidoctor[]
+:source-highlighter: coderay
+endif::asciidoctor[]
+:idprefix:
+// :stylesheet: asciidoc.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+:url-archlinuxcn-repos: https://github.com/archlinuxcn/repo
+:url-archlinuxcn-mirrors: https://github.com/archlinuxcn/mirrorlist-repo
+
+== Config
+
+.Add follow to `/etc/config`
+[source]
+----
+## 阿里云 (Global CDN) (ipv4, http, https)
+## Added: 2020-07-03
+[archlinuxcn]
+Server = https://mirrors.aliyun.com/archlinuxcn/$arch
+----
+
+.import PGP Keys
+[source, sh]
+----
+sudo pacman -Syy && sudo pacman -S archlinuxcn-keyring
+----
+
+
+== Reference
+
+* {url-archlinuxcn-repos}[archlinuxcn repository]
+* {url-archlinuxcn-mirrors}[archlinuxcn mirrors]

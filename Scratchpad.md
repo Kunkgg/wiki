@@ -72,3 +72,42 @@ sheetAPI:
 
 "snippets.snipmate.enabled": true,
 "snippets.ultisnips.pytthonVersion": 3
+
+export PASSWD49="Sinopharm@wms_159"
+
+rsync -a --rsh='sshpass -e ssh -l root' 192.168.70.49:/root/virusLog_wmsmscnew ./includes/
+
+rsync --rsh='sshpass -e ssh -l root' ./checklogs.sh 192.168.70.49:/root
+
+scp root@192.168.70.6:/root/virusLog/ ./includes/
+
+# meta template {{{
+
+snippet meta "asciidoc meta header" b
+= \${1:`!p snip.rv = snip.basename or "untitled"`}
+gk07 <gk_520@hotmail.com>
+\${2:v1.0}, `!v strftime("%Y-%m-%d")`
+:toc:
+:icons: font
+:library: Asciidoctor
+// ifdef::asciidoctor[]
+// :source-highlighter: coderay
+// endif::asciidoctor[]
+:idprefix:
+// :stylesheet: ../../resources/asciidoctor.css
+:imagesdir: images
+:includesdir: includes
+//:title-logo-image: image:logo.png[pdfwidth=3.00in,align=center]
+//:backend: docbook45
+//:backend: html5
+//:doctype: book
+//:sectids!:
+:plus: &#43;
+
+// refs
+:url-github: https://github.com/Kunkgg
+//:url-blog: http-to-my-blog
+
+endsnippet
+
+# }}} meta template

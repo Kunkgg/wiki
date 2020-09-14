@@ -11,6 +11,8 @@
 * {blockdiag-doc-url}[blockdiag doc^]
 
 === examples
+
+.plantuml
 ["plantuml"]
 ----
 skinparam monochrome true
@@ -40,32 +42,76 @@ main_ts ==> (main.view)
 (singleton) ---> (model)
 ----
 
+.rackdiag
 ["rackdiag"]
 ----
 rackdiag {
   rack {
-    16U;
-    description = "Rack 01";
-    1: UPS [2U];
-    3: DB Server;
-    4: Web Server;
-    5: Web Server;
-    6: Web Server;
-    7: Load Balancer;
-    8: L3 Switch;
-    9: N/A [2U]
+    42U;
+    description = "N6 未使用";
+    1: N/A [42U];
   }
 
   rack {
-    16U;
-    description = "Rack 02";
-    1: UPS [2U];
-    3: DB Server;
-    4: Web Server;
-    5: Web Server;
-    6: Web Server;
-    7: Load Balancer;
-    8: L3 Switch;
+    42U;
+    description = "N5";
+    3: H3C 1850 专线交换机;
+    4: 统御专网防火墙;
+    6: 防火墙 F2;
+    7: 移动;
+    7: 统御专网接入;
+    15: H3C F1000 VPN;
+    17: S9306 核心交换机 [10U];
+    29: USG6000 防火墙;
+    30: 联通;
+    30: 移动;
+    40: 机柜配线架
+  }
+
+  rack {
+    42U;
+    description = "N4";
+    1: 光纤盒 [4U];
+    6: 光纤配线架 [1U];
+    7: 电信;
+    7: 汇鑫专网接入;
+    13: 光纤收发器*3 [2U];
+    15: 光纤收发器*3 [2U];
+    17: S9306 核心交换机 [10U];
+    29: 监控管家;
+    30: USG6000 防火墙;
+    31: 广电;
+    31: 物流专线接入;
+    40: 机柜配线架;
+  }
+
+  rack {
+    42U;
+    description = "N3";
+    5: 光纤配线架;
+    7: 光纤配线架;
+    19: 理线器;
+    20: H3C S5500 交换机;
+    22: 硬盘录像机(16路) [4U];
+    26: 硬盘录像机(16路) [4U];
+    31: 硬盘录像机(32路) [4U];
+    35: 硬盘录像机(32路) [4U];
+  }
+
+  rack {
+    42U;
+    description = "N2 未使用";
+    1: N/A [42U];
+  }
+
+  rack {
+    42U;
+    description = "N1";
+    1: 110 配线架 [20U];
+    23: ZXDSL 9806H [2U];
+    27: GEI 4805S;
+    29: 天波 [4U];
+    34: 110 配线架 [4U];
   }
 }
 ----

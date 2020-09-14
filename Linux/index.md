@@ -48,7 +48,7 @@
 - top
 - pstree
 - [netstat and ss](netstat_and_ss.md)
-- ssh
+- [ssh](ssh.adoc)
 - [scp](scp.md)
 
 - [man](man.md)

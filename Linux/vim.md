@@ -400,3 +400,12 @@ Reference:
 
     :h 'clipboard'
     (and follow the tags)
+
+### How to configure the `commentary.vim` for specific filetype ?
+
+```
+autocmd FileType apache setlocal commentstring=#\ %s
+```
+
+NOTE:
+*We have to reload the config by `set ft=filetype` in each exsited file.*

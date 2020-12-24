@@ -1,0 +1,27 @@
+= tmux
+// refs
+
+:tmux-capture-url: https://blog.sleeplessbeastie.eu/2019/10/28/how-to-store-the-contents-of-tmux-pane/
+
+== capture pane
+
+{tmux-capture-url}[Reference Blog: sleeplessbeastie's notes ]
+
+.capture pane in CLI
+[source, sh]
+----
+# caputure current pane into temp-capture-buffer
+tmux capture-pane -b temp-capture-buffer -S -
+
+# store contents of temp-capture-buffer to file
+tmux save-buffer -b temp-capture-buffer ~/tmux.log
+
+# delete capture-buffer
+tmux delete-buffer -b temp-capture-buffer
+----
+
+.capture pane by tmux keybind
+[source, sh]
+----
+bind-key S capture-pane -b temp-capture-buffer -S - \; save-buffer -b temp-capture-buffer ~/tmux.log \; delete-buffer -b temp-capture-buffer
+----

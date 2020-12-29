@@ -48,3 +48,11 @@ you can force the client to reenable the algorithm with the client option:
 Host 192.168.0.134
     KexAlgorithms +diffie-hellman-group1-sha1
 ----
+
+== Common Use Cases
+
+.Copy the public key to remote server
+[source]
+----
+cat ~/.ssh/id_rsa.pub | ssh username@remote_host "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+----
